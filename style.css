@@ -26,10 +26,11 @@ h1 {
 }
 
 button {
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5px;
     margin-bottom: 50px;
     margin-left: 15px;
+    color: aliceblue;
 }  
  
 #weather-display {
