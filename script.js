@@ -1,6 +1,6 @@
 async function getWeather(location) {
   const response = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=d6bab5e0b374c1fb0431c40a61afa691`,
+    `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=d6bab5e0b374c1fb0431c40a61afa691`,
     { mode: "cors" }
   );
   if (!response.ok) alert(`City ${location} not found`);
