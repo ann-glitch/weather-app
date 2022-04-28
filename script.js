@@ -31,7 +31,8 @@ const searchButton = document.getElementById("search");
 searchButton.addEventListener("click", (e) => {
   e.preventDefault();
   const inputText = document.querySelector(".input-text");
-  inputText.value = inputText.value.toUpperCase();
+  inputText.value =
+    inputText.value.charAt(0).toUpperCase() + inputText.value.slice(1);
   getWeather(inputText.value);
   inputText.value = " ";
 });
