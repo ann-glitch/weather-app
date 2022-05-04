@@ -5,26 +5,29 @@ async function getWeather(location) {
   );
   if (!response.ok) alert(`City ${location} not found`);
   const weatherData = await response.json();
-  const { main, sys, weather } = weatherData;
+  const { main, sys, weather, wind } = weatherData;
   console.log(main, "main");
   console.log(sys, "sys");
   console.log(weather, "weatherdata");
+  console.log(wind, "wind");
 
-  displayData(location, sys, main, weather);
+  displayData(location, sys, main, weather, wind);
 }
 
-function displayData(location, sys, main, weather) {
+function displayData(location, sys, main, weather, wind) {
   const cityName = document.getElementById("city-name");
   const temperature = document.getElementById("temperature");
   const feelsLike = document.getElementById("feels-like");
   const humidity = document.getElementById("humidity");
   const weatherDescription = document.getElementById("description");
+  const windSpeed = document.getElementById("wind");
 
   cityName.textContent = `${location}, ${sys.country}`;
   temperature.textContent = `${main.temp}°C`;
   feelsLike.textContent = `It feels like ${main.feels_like}°C`;
   humidity.textContent = `Humidity: ${main.humidity}%`;
   weatherDescription.textContent = `Description: ${weather[0].description}`;
+  windSpeed.textContent = `Wind: ${wind.speed * 3.6}km/h`;
 }
 
 const searchButton = document.getElementById("search");
