@@ -1,17 +1,20 @@
 async function getWeather(location) {
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=d6bab5e0b374c1fb0431c40a61afa691`,
-    { mode: "cors" }
-  );
-  if (!response.ok) alert(`City ${location} not found`);
-  const weatherData = await response.json();
-  const { main, sys, weather, wind } = weatherData;
-  console.log(main, "main");
-  console.log(sys, "sys");
-  console.log(weather, "weatherdata");
-  console.log(wind, "wind");
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=d6bab5e0b374c1fb0431c40a61afa691`,
+      { mode: "cors" }
+    );
+    const weatherData = await response.json();
+    const { main, sys, weather, wind } = weatherData;
+    console.log(main, "main");
+    console.log(sys, "sys");
+    console.log(weather, "weatherdata");
+    console.log(wind, "wind");
 
-  displayData(location, sys, main, weather, wind);
+    displayData(location, sys, main, weather, wind);
+  } catch (err) {
+    alert(`City ${location} not found!`);
+  }
 }
 
 function displayData(location, sys, main, weather, wind) {
