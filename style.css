@@ -1,5 +1,5 @@
-* { 
-    background-color: rgba(61, 110, 140, 0.544);
+:root { 
+    background: rgba(109, 127, 139, 0.544);
 }
 
 .input-form {
@@ -30,7 +30,7 @@ button {
     border-radius: 5px;
     margin-bottom: 50px;
     margin-left: 15px;
-    color: aliceblue;
+    color: black;
 }  
  
 #weather-display {
