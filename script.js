@@ -19,8 +19,8 @@ async function getWeather(location) {
     //calling the function that displays all the selected responses to our html page.
     displayData(location, sys, main, weather, wind);
   } catch (err) {
-    //this catch statement always follows the try statement and it's used to handle errors which in this case, alerts the user when it's city input couldn't be found.
-    alert(`City ${location} not found!`);
+    //this catch statement always follows the try statement and it's used to handle errors which in this case, alerts the user of any error found.
+    alert(err);
   }
 }
 
