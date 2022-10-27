@@ -4,4 +4,4 @@
 
 ---
 
-[Live Demo] (https://ann-glitch.github.io/weather-app/)
+[Live Demo](https://ann-glitch.github.io/weather-app/)
